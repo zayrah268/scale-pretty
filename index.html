@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pretty Scale: The Art and Science of Attractiveness</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Pretty Scale blends scientific facial measurement with artistic visual harmony—explore culture, psychology, limitations, and responsible interpretation." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0C0A1E" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pretty Scale: The Art and Science of Attractiveness" />
+  <meta property="og:description" content="A professional guide to the art-and-science lens of attractiveness: structure, expression, culture, and responsible use." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      /* Elegant plum + teal palette */
+      --bg0:#070616;
+      --bg1:#0C0A1E;
+      --bg2:#111033;
+
+      --surface: rgba(255,255,255,.06);
+      --surface2: rgba(17,16,51,.55);
+      --stroke: rgba(255,255,255,.10);
+
+      --text:#F6F2FF;
+      --muted: rgba(246,242,255,.72);
+      --muted2: rgba(246,242,255,.58);
+
+      --a:#A78BFA; /* violet */
+      --b:#2DD4BF; /* teal */
+      --shadow: 0 28px 85px rgba(0,0,0,.58);
+
+      --radius: 20px;
+      --radius2: 28px;
+      --max: 1140px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(980px 520px at 14% 8%, rgba(167,139,250,.22), transparent 60%),
+        radial-gradient(920px 520px at 88% 12%, rgba(45,212,191,.20), transparent 62%),
+        radial-gradient(920px 520px at 50% 112%, rgba(59,130,246,.10), transparent 62%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 55%, var(--bg2));
+      overflow-x:hidden;
+      line-height:1.95;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:28px 18px 84px}
+
+    /* Topbar */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 10px 6px 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 850;
+      letter-spacing: -0.01em;
+    }
+    .brand .mark{
+      width:12px;height:12px;border-radius:999px;
+      background: linear-gradient(180deg, var(--a), var(--b));
+      box-shadow: 0 0 0 4px rgba(167,139,250,.16);
+    }
+    .nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .chip{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(17,16,51,.55);
+      color: rgba(246,242,255,.78);
+      font-size: 13px;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .chip:hover{
+      transform: translateY(-1px);
+      border-color: rgba(45,212,191,.55);
+      background: rgba(17,16,51,.75);
+      color:#fff;
+    }
+
+    /* Hero */
+    .hero{
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      isolation:isolate;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(1100px 280px at 15% 0%, rgba(167,139,250,.62), transparent 62%),
+        radial-gradient(1000px 280px at 86% 10%, rgba(45,212,191,.55), transparent 62%);
+      opacity:.18;
+      pointer-events:none;
+      z-index:-1;
+    }
+    .hero-inner{padding:30px 28px 22px}
+
+    .badges{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:14px}
+    .badge{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(17,16,51,.52);
+      color: rgba(246,242,255,.74);
+      font-size: 12.5px;
+    }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(30px, 3.6vw, 50px);
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+    }
+    .sub{
+      margin:0;
+      max-width: 98ch;
+      color: var(--muted);
+      font-size: 15.9px;
+    }
+
+    /* Link style */
+    a.anchor{
+      display:inline-block;
+      padding: .10rem .58rem;
+      border-radius: 999px;
+      border:1px solid rgba(45,212,191,.40);
+      background: linear-gradient(90deg, rgba(45,212,191,.18), rgba(167,139,250,.16));
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      white-space:nowrap;
+      color:#fff;
+    }
+    a.anchor:hover{
+      transform: translateY(-1px);
+      border-color: rgba(167,139,250,.55);
+      background: linear-gradient(90deg, rgba(45,212,191,.26), rgba(167,139,250,.22));
+    }
+
+    /* Content */
+    .content{
+      margin-top: 18px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius2);
+      background: rgba(17,16,51,.40);
+      box-shadow: 0 16px 52px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+    }
+    .content-inner{padding: 22px 22px 28px}
+
+    .section{
+      padding: 18px 18px;
+      border:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+      position:relative;
+    }
+    .section::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius: var(--radius);
+      pointer-events:none;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
+    }
+    .section h2{margin:0 0 8px; font-size: 21.5px; letter-spacing:-.01em}
+    .section p{margin:10px 0 0; color: var(--muted); font-size: 15.6px}
+
+    .callout{
+      margin-top:12px;
+      padding: 14px 14px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(45,212,191,.08);
+      color: rgba(246,242,255,.78);
+    }
+    .callout strong{color:#fff}
+
+    footer{
+      margin-top:18px;
+      text-align:center;
+      color: rgba(246,242,255,.55);
+      font-size: 12px;
+    }
+
+    @media (max-width:600px){
+      .hero-inner{padding:22px 18px 18px}
+      .content-inner{padding:18px 14px 22px}
+      .section{padding:16px 14px}
+    }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Pretty Scale: The Art and Science of Attractiveness",
+    "description": "Pretty Scale explores attractiveness through scientific structure and artistic harmony, including cultural and psychological context.",
+    "inLanguage": "en"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="topbar">
+      <div class="brand"><span class="mark"></span> <span>Art • Science • Aesthetics</span></div>
+      <nav class="nav" aria-label="Navigation">
+        <a class="chip" href="#science">Scientific foundation</a>
+        <a class="chip" href="#art">Artistic dimension</a>
+        <a class="chip" href="#culture">Culture</a>
+        <a class="chip" href="#psych">Psychology</a>
+        <a class="chip" href="#responsible">Responsible use</a>
+      </nav>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="badges">
+          <span class="badge">Harmony & proportion</span>
+          <span class="badge">Observation over judgment</span>
+          <span class="badge">Modern aesthetics</span>
+        </div>
+
+        <h1>Pretty Scale: The Art and Science of Attractiveness</h1>
+
+        <!-- INTRO (FIRST LINK MID, NOT AT START) -->
+        <p class="sub">
+          Attractiveness has always existed at the intersection of perception and interpretation. It is shaped by biology, culture, emotion, and personal experience. Pretty Scale introduces a modern perspective by examining attractiveness through both artistic sensibility and scientific structure. Rather than treating beauty as a fixed standard,
+          <a class="anchor" href="https://testdebelleza.com/en" target="_blank" rel="noopener noreferrer">Pretty scale</a>
+          presents a framework that blends visual harmony with measurable patterns, offering insight into how attractiveness can be observed and analyzed.
+          This balance between art and science reflects a growing interest in understanding appearance through logic while still acknowledging its subjective nature.
+        </p>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="content-inner">
+
+        <article class="section" id="science">
+          <h2>The Scientific Foundation of Pretty Scale</h2>
+          <p>
+            The scientific aspect of Pretty Scale is rooted in facial analysis and proportion measurement. By identifying key facial landmarks and examining their spatial relationships, the system evaluates symmetry, balance, and alignment. These elements are often associated with visual harmony and are widely studied in fields such as psychology, design, and aesthetics.
+          </p>
+          <p>
+            The precision of this approach lies in its consistency. Measurements are applied uniformly, allowing for structured observation rather than emotional interpretation. However, science in this context provides structure, not judgment, forming only one part of the overall picture.
+          </p>
+        </article>
+
+        <article class="section" id="art">
+          <h2>The Artistic Dimension of Attractiveness</h2>
+          <p>
+            While data and algorithms provide the foundation, the concept of attractiveness cannot exist without artistry. Artistic perception recognizes nuance, expression, and individuality. Pretty Scale acknowledges this by focusing on balance rather than perfection, emphasizing how features work together rather than isolating individual traits.
+          </p>
+          <p>
+            Attractiveness, from an artistic perspective, is fluid and expressive. Facial movement, confidence, and personality contribute to how beauty is perceived, reminding us that no calculation can fully replace human intuition.
+          </p>
+        </article>
+
+        <article class="section">
+          <h2>Where Art Meets Measurement</h2>
+          <p>
+            Pretty Scale stands at the point where analytical precision meets visual interpretation. This intersection allows users to explore facial structure in a way that feels informative rather than prescriptive. The system does not claim to define beauty but offers insight into how proportion and harmony influence visual appeal.
+          </p>
+          <p>
+            This blended approach makes Pretty Scale particularly compelling. It encourages curiosity about form and structure while leaving space for personal interpretation and emotional connection.
+          </p>
+
+          <!-- SECOND LINK (PLACED MID, NOT AT END) -->
+          <div class="callout">
+            <strong>Explore more references:</strong>
+            <span style="color:var(--muted2);"> For additional context and examples around measurement-based aesthetics, visit </span>
+            <a class="anchor" href="https://prettyscalelinks.codeberg.page/pretty-scale" target="_blank" rel="noopener noreferrer">a Pretty Scale resource collection</a>
+            <span style="color:var(--muted2);"> that expands on related tools and perspectives.</span>
+          </div>
+        </article>
+
+        <article class="section" id="culture">
+          <h2>Cultural Influence and Individual Expression</h2>
+          <p>
+            Attractiveness varies across cultures and historical contexts. What is considered balanced or appealing in one society may differ in another. Pretty Scale operates within defined parameters, but it cannot fully reflect the diversity of global beauty ideals.
+          </p>
+          <p>
+            This limitation highlights the importance of viewing results as contextual rather than absolute. Individual expression, cultural identity, and personal style remain essential elements of attractiveness that extend beyond any analytical model.
+          </p>
+        </article>
+
+        <article class="section" id="psych">
+          <h2>Psychological Perspective and Self-Awareness</h2>
+          <p>
+            The experience of using Pretty Scale often prompts reflection on self-image and perception. When approached thoughtfully, it can serve as a tool for awareness rather than validation. Understanding how facial features align structurally may spark curiosity without influencing self-worth.
+          </p>
+          <p>
+            Maintaining emotional balance is essential. Attractiveness is not a measure of value, and digital analysis should never replace self-acceptance or confidence.
+          </p>
+        </article>
+
+        <article class="section">
+          <h2>The Role of Pretty Scale in Modern Aesthetic Discussion</h2>
+          <p>
+            Pretty Scale contributes to a broader conversation about how technology shapes modern views of beauty. As digital tools become more integrated into daily life, they influence how individuals perceive themselves and others. Pretty Scale reflects this shift by offering a structured yet limited interpretation of attractiveness.
+          </p>
+          <p>
+            Its relevance lies in its ability to provoke discussion rather than deliver conclusions. It encourages users to question how beauty is defined and why certain patterns feel visually pleasing.
+          </p>
+        </article>
+
+        <article class="section">
+          <h2>Beyond Scores and Algorithms</h2>
+          <p>
+            While numerical outputs may capture attention, the essence of Pretty Scale lies beyond scores. Attractiveness cannot be reduced to metrics alone. Human connection, expression, and individuality remain central to how beauty is experienced in real life.
+          </p>
+          <p>
+            Recognizing this distinction allows Pretty Scale to be appreciated as an analytical exploration rather than a definitive assessment.
+          </p>
+        </article>
+
+        <article class="section" id="responsible">
+          <h2>Responsible Use and Balanced Interpretation</h2>
+          <p>
+            Using Pretty Scale responsibly means understanding its dual nature. It is both a scientific tool and an artistic exploration. When used with awareness, it can enhance understanding without shaping identity.
+          </p>
+          <p>
+            Digital tools should support curiosity, not comparison. Pretty Scale aligns with this principle when its results are viewed as informative rather than evaluative.
+          </p>
+        </article>
+
+        <article class="section">
+          <h2>Conclusion</h2>
+          <p>
+            Pretty Scale represents a thoughtful fusion of art and science in the exploration of attractiveness. By combining structured measurement with an appreciation for visual harmony, it offers a new way to observe facial aesthetics without defining them. Its true value lies in insight, not judgment.
+          </p>
+          <p>
+            In a world increasingly influenced by digital interpretation, Pretty Scale reminds us that attractiveness is not a formula but a dynamic balance of structure, expression, and individuality.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <footer>
+      Unique UI • SEO-friendly • Mobile responsive
+    </footer>
+
+  </div>
+</body>
+</html>
+
